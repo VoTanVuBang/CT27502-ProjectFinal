@@ -47,7 +47,6 @@ include "./class/news_class.php";
 $news = new news();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $insert_news = $news->insert_news($_POST, $_FILES);
 }
 ?>
@@ -55,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="admin-content-right">
     <div class="admin-content-right-product-add">
         <h1>Thêm Tin Tức</h1>
+        <!-- action không có địa chỉ, val trong input lưu về server. bằng method Post -->
         <form action="" method="POST" enctype="multipart/form-data">
             <label for="">Nhập tiêu đề <span style="color: red;">*</span></label>
             <input required type="text" name="news_title">
@@ -67,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
             <label for="">Ảnh minh họa<span style="color: red;">*</span></label>
-            <span style="color:red"><?php if (isset($insert_product)) {
-                                        echo ($insert_product);
+            <span style="color:red"><?php if (isset($insert_news)) {
+                                        echo ($insert_news);
                                     } ?></span>
             <input name="news_img" required type="file">
             <button type="submit">Thêm</button>

@@ -55,7 +55,6 @@ if (isset($_GET['news_id']) && $_GET['news_id'] != '') {
 $get_news = $news->get_news($id);
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
-
     $update_news = $news->update_news($_POST, $_FILES,$id);
 }
 ?>
@@ -67,7 +66,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             <?php
             if ($get_news) {
                 foreach($get_news as $key => $result){
-
             ?>
                     <label for="">Tiêu đề <span style="color: red;">*</span></label>
                     <input required type="text" name="news_title" value="<?php echo $result['news_title'] ?>">
@@ -84,8 +82,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
                     <label for="">Ảnh minh họa<span style="color: red;">*</span></label>
                     <span style="color:red">
-                        <?php if (isset($insert_product)) {
-                            echo ($insert_product);
+                        <?php if (isset($insert_news)) {
+                            echo ($insert_news);
                         } ?>
                     </span><br>
                     <img src="uploads/<?php echo $result['news_img']?>" width="200px" alt="">

@@ -27,11 +27,12 @@ if (isset($_GET['cartegory_id']) && $_GET['cartegory_id'] != 0) {
 
             <?php
             if ($show_cartegory) {
-                $i = 0;
+                $i = 1;
+                //"Tên cột =>(trả về) giá trị"
                 foreach ($show_cartegory as $key => $val) {
             ?>
                     <tr>
-                        <td><?php echo $i ?></td>
+                        <td><?php echo $i++ ?></td>
                         <td><?php echo $val['cartegory_id'] ?></td>
                         <td><?php echo $val['cartegory_name'] ?></td>
                         <td><a href="cartegory-edit.php?cartegory_id=<?php echo $val['cartegory_id'] ?> ">Sửa</a> |

@@ -17,16 +17,17 @@ class order extends DB{
         $query = "SELECT * FROM tbl_order,tbl_product WHERE tbl_order.order_code = '$order_code'
         AND tbl_order.product_id = tbl_product.product_id";
         $result = $this->pdo_query($query);
+        if(!$result){
+            header:Location('order-list.php');
+        }
         return $result;
     }
 
     public function shipped($order_code){
-        
         $query = "UPDATE tbl_order SET status = '1'
                 WHERE order_code = '$order_code'";
         $result = $this->pdo_execute($query);
         return $result;
-
     }
 
     public function del_order($order_code){

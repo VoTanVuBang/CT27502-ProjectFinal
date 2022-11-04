@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['update']) {
 
                     <div class="cart-content-right-text">
                         <p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 3.000.000 <sup>đ</sup> </p>
-                        <p style="color: red; font-weight:bold;">Mua thêm <span style="font-size:18px">20.000</span> <sup>đ</sup> để được miễn phí SHIP</p>
+                        <p style="color: red; font-weight:bold;">Mua thêm <span style="font-size:18px"><?php echo number_format(3000000-$tongtien,0,',','.') ?></span> <sup>đ</sup> để được miễn phí SHIP</p>
                     </div>
 
                     <div class="row">

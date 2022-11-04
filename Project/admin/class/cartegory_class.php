@@ -9,12 +9,12 @@
 
         public function insert_cartegory($cartegory_name){
             $query = "INSERT INTO tbl_cartegory (cartegory_name) VALUES ('$cartegory_name') ";
-            
+            //execute
             $stmt = $this->pdo_execute($query);
             header('Location:cartegory-list.php');
             return $stmt;
         }
-
+        //Lấy cơ sở dữ liệu từ bảng
         public function show_cartegory(){
             $query = "SELECT * FROM tbl_cartegory ORDER BY cartegory_id DESC";
             $stmt = $this->pdo_query($query);
@@ -24,7 +24,12 @@
         public function  get_cartegory($cartegory_id){
             $query = "SELECT * FROM tbl_cartegory WHERE cartegory_id = '$cartegory_id'";
             $stmt = $this->pdo_query($query);
+            //Select cái bảng k có id thì trả về trang list
+            if(!$stmt){
+                header('Location:cartegory-list.php');
+            }
             return  $stmt;
+
         }
 
         public function update_cartegory($cartegory_name,$cartegory_id){

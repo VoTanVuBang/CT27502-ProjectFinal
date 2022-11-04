@@ -30,11 +30,11 @@ include "./class/product_class.php";
                     </tr>
 
                     <?php
-                        if($show_product){$i=0;
+                        if($show_product){$i=1;
                             foreach($show_product as $key => $val ){
                     ?>
                     <tr>
-                        <td><?php echo $i ?></td>
+                        <td><?php echo $i++ ?></td>
                         <td><?php echo $val['product_id']?></td>
                         <td><?php echo $val['product_name'] ?></td>
                         <td><img src="uploads/<?php echo $val['product_img'] ?>" width="100px" heigh="100px"></td>

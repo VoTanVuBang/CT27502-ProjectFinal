@@ -63,6 +63,9 @@ class news extends DB
     {
         $query = "SELECT * FROM tbl_news WHERE news_id = '$news_id'";
         $result = $this->pdo_query($query);
+        if(!$result){
+            header('Location:news-list.php');
+        }
         return  $result;
     }
     public function update_news($_post, $_files, $id)

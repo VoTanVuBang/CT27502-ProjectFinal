@@ -35,7 +35,7 @@ $get_product = $frontend->get_all_product();
                                 <a href="product_detail.php?product_id=<?php echo $get_pro['product_id'] ?>">
                                     <h1><?php echo ucwords($get_pro['product_name']) ?></h1>
                                 </a>
-                                <p><?php echo number_format($get_pro['product_price'], 0, ',', '.') ?> <sup>đ</sup></p>
+                                <p style="text-align:center"><?php echo number_format($get_pro['product_price'], 0, ',', '.') ?> <sup>đ</sup></p>
                             </div>
 
                     <?php
